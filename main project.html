@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie's Restaurant</title>
+    <style>
+nav{
+    background:#222;
+    color:white;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+nav ul li a{
+    color:white;
+    text-decoration:none;
+}
+.hero{
+    text-align:center;
+    padding:60px 20px;
+    background:linear-gradient(to right,#36d4b5,#45d06f);
+    color:white;
+       
+}
+.hero h1{
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    margin-bottom:30px;
+    font-size:18px;
+}
+
+.hero img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    animation: rotate 5s linear infinite;
+}
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.special{
+    padding:50px 20px;
+}
+
+.special h2,
+.gallery h2{
+    text-align:center;
+    color:#c55e3c;
+    margin-bottom:30px;
+    font-size:40px;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:300px;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,.2);
+    text-align:center;
+    animation: updown 2s linear infinite;
+}
+@keyframes updown{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+
+.card h3{
+    color:#f05a28;
+    margin:15px 0;
+}
+
+.card p{
+    padding:0 15px 20px;
+}
+
+.gallery{
+    padding:50px 20px;
+}
+
+.gallery-box{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.gallery-box img{
+    width:250px;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    animation: inout 5s linear infinite;
+}
+@keyframes inout{
+    0%{
+        transform: scale(normal);
+    }
+    50%{
+        transform: scale(0.9);
+    }
+    100%{
+        transform: scale(normal);
+    }
+}
+.offer{
+    background:rgb(107, 165, 76);
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+    animation: offerr 3s linear infinite;
+}
+@keyframes offerr{
+    0%{
+        transform: scale(normal);
+    }
+    50%{
+        transform: scale(0.9);
+    }
+    100%{
+        transform: scale(normal);
+    }
+}
+
+.offer h2{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.offer p{
+    font-size:18px;
+}
+
+.why-us{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.why-us h2{
+    color:#c63606dc;
+    font-size:40px;
+    margin-bottom:30px;
+}
+
+.stats{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+    animation: us 2s linear infinite;
+}
+@keyframes us{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.box{
+    width:220px;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,.15);
+}
+
+.box h3{
+    color:#d15329;
+    font-size:35px;
+}
+
+.box p{
+    margin-top:10px;
+}
+
+.reviews{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.reviews h2{
+    color:#c84c22;
+    font-size:40px;
+    margin-bottom:30px;
+}
+
+.review-container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+    animation: review 2s linear infinite;
+}
+@keyframes review{
+    0%{
+        transform: scale(0.8);
+    }
+    50%{
+        transform: scale(0.9);
+    }
+    100%{
+        transform: scale(0.8);
+    }
+}
+
+.review-card{
+    width:320px;
+    background:white;
+    padding:25px;
+    border-left:5px solid rgb(209, 96, 25);
+    box-shadow:0 2px 10px rgba(0,0,0,.15);
+}
+
+.review-card h3{
+    color:#cd5c36;
+    margin-bottom:10px;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+footer h2{
+    margin-bottom:20px;
+}
+
+footer p{
+    margin:10px 0;
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">🍴 Foodie's</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="hero">
+        <h1>Welcome To Foodie's Restaurant</h1>
+        <p>Enjoy Delicious Food, Fresh Ingredients and Amazing Service</p>
+       <img src="pizza.jpeg" alt="Image">
+    </section>
+
+    <section class="special">
+        <h2>Our Special Dishes</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <img src="p6.jpeg" alt="Pizza">
+                <h3>Italian Pizza</h3>
+                <p>Loaded with cheese and fresh vegetables.</p>
+            </div>
+
+            <div class="card">
+                <img src="p5.jpeg" alt="Burger">
+                <h3>Special Burger</h3>
+                <p>Juicy burger served with crispy fries.</p>
+            </div>
+
+            <div class="card">
+                  <img src="p3.jpeg" alt="Biryani">
+                <h3>Chicken Biryani</h3>
+                <p>Traditional biryani with rich spices.</p>
+            </div>
+        </div>
+    </section>
+    <section class="gallery">
+        <h2>Food Gallery</h2>
+        <div class="gallery-box">
+            <img src="p4.jpeg" alt="Biryani">
+        <img src="p1.jpeg" alt="Chicken mandi">
+        <img src="p2.jpeg" alt="Veg thali">
+        <img src="p3.jpeg" alt="veg thali ">
+        <img src="p4.jpeg" alt="naan">
+        <img src="p5.jpeg" alt="chicken curry">
+        <img src="p6.jpeg" alt="mutton curry">
+        <img src="p1.jpeg" alt="fish curry">
+        <img src="p2.jpeg" alt="pizza">
+        <img src="p3.jpeg" alt="Burger">
+        <img src="p4.jpeg" alt="ice cream">
+        <img src="p5.jpeg" alt="juice">
+        </div>
+    </section>
+<section class="offer">
+    <h2>🎉 Weekend Special Offer 🎉</h2>
+    <p>Get 30% OFF On All Pizza Orders This Weekend</p>
+</section>
+
+<section class="why-us">
+    <h2>Why Choose Us?</h2>
+
+    <div class="stats">
+        <div class="box">
+            <h3>20K+</h3>
+            <p>Happy Customers</p>
+        </div>
+
+        <div class="box">
+            <h3>120+</h3>
+            <p>Food Items</p>
+        </div>
+
+        <div class="box">
+            <h3>30+</h3>
+            <p>Expert Chefs</p>
+        </div>
+
+        <div class="box">
+            <h3>15+</h3>
+            <p>Years Experience</p>
+        </div>
+    </div>
+</section>
+
+<section class="reviews">
+    <h2>Customer Reviews</h2>
+
+    <div class="review-container">
+
+        <div class="review-card">
+            <h3>⭐⭐⭐⭐⭐ Bhanu</h3>
+            <p>The pizza was amazing and the service was excellent.</p>
+        </div>
+
+        <div class="review-card">
+            <h3>⭐⭐⭐⭐⭐ Fasil</h3>
+            <p>Best restaurant in town. Excellent food quality.</p>
+        </div>
+
+        <div class="review-card">
+            <h3>⭐⭐⭐⭐⭐ Priya</h3>
+            <p>Loved the biryani and desserts. Will visit again.</p>
+        </div>
+    </div>
+</section>
+<footer>
+    <h2>Visit Our Restaurant</h2>
+    <p>📍 Tirupati, Andhra pradesh</p>
+    <p>📞 +91 2596387451</p>
+    <p>✉️ foodies@gmail.com</p>
+    <p>🕒 Open Daily: 10 AM - 10 PM</p>
+</footer>
+</body>
+</html>
